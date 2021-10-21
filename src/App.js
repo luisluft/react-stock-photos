@@ -64,8 +64,8 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (page === 1) fetchImages();
-    else setPage(1);
+    setPage(1);
+    fetchImages();
   };
 
   return (
