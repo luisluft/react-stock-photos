@@ -41,13 +41,6 @@ function App() {
 
   useEffect(() => {
     const event = window.addEventListener("scroll", () => {
-      // window.innerHeight;
-      console.log("window.innerHeight :", window.innerHeight);
-      // window.scrollY
-      console.log("window.scrollY :", window.scrollY);
-      // document.body.scrollHeight
-      console.log("document.body.scrollHeight :", document.body.scrollHeight);
-
       if (
         !loading &&
         window.innerHeight + window.scrollY >= document.body.scrollHeight - 2
