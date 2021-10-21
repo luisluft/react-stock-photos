@@ -24,7 +24,8 @@ function App() {
       const response = await fetch(url);
       const data = await response.json();
       setPhotos((oldPhotos) => {
-        if (query) return [...oldPhotos, ...data.results];
+        if (query && page === 1) return data.results;
+        else if (query) return [...oldPhotos, ...data.results];
         else return [...oldPhotos, ...data];
       });
       setLoading(false);
@@ -63,7 +64,8 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetchImages();
+    if (page === 1) fetchImages();
+    else setPage(1);
   };
 
   return (
